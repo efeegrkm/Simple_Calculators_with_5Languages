@@ -1,0 +1,39 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+print "Ilk sayıyı gir: ";
+my $a = <STDIN>;
+chomp($a); 
+my $operator = <STDIN>;
+chomp($operator);
+
+print "İkinci sayıyı gir: ";
+my $b = <STDIN>;
+chomp($b);
+my $result;
+
+if ($operator eq '+') {
+    $result = $a + $b;
+} 
+elsif ($operator eq '-') {
+    $result = $a - $b;
+} 
+elsif ($operator eq '*') {
+    $result = $a * $b;
+} 
+elsif ($operator eq '/') {
+    if ($b == 0) {
+        print "Divided by zero exception\n";
+        exit;
+    } else {
+        $result = $a / $b;
+    }
+} 
+
+else {
+    print "Invalid operator\n";
+    exit;
+}
+
+# Sonucu yazdır
+print "Sonuç: $result\n";
